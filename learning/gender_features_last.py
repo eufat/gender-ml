@@ -38,7 +38,7 @@ test_set = featuresets[:500]
 
 classifier = nltk.NaiveBayesClassifier.train(train_set)
 
-print "accuracy is: "
+print ("accuracy is: ")
 print (nltk.classify.accuracy(classifier, test_set))
 
 classifier.show_most_informative_features()
