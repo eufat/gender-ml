@@ -2,6 +2,10 @@ from nltk.corpus import names
 from './../utils/read_lineByLine_toList.py' import *
 import random
 
+
+male_list = read_line_by_line('../datasets/male.csv')
+female_list = read_line_by_line('../datasets/female.csv')
+
 # ambil kata pertama dari kalimat
 def get_first_word(words):
     words_list = words.split()
@@ -17,8 +21,8 @@ def gender_features_last_two(word):
     return {'last_two': word[-1] + word[-2]} # return huruf 2 kata terakhir
 
 labeled_names = (
-    [(name, 'male') for name in names.words('male.txt')] + 
-    [(name, 'female') for name in names.words('female.txt')]
+    [(name, 'male') for name in male_list] + 
+    [(name, 'female') for name in female_list]
 )
 
 random.shuffle(labeled_names)
