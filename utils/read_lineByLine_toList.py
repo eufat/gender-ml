@@ -1,6 +1,6 @@
 from pathlib import Path
 
-def readLineByLine(filepath):
+def read_line_by_line(filepath):
     koleksi_nama = list()
     path = Path(filepath)
     if path.is_file():
