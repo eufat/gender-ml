@@ -18,9 +18,7 @@ def get_first_word(words):
 
 def gender_features_last_two(word):
     word = get_first_word(word) # ambil kata pertama
-    return {'last_two':  word[-2:],
-            'consonants': find_consonants.count_consonants(word)
-    } # return huruf 2 kata terakhir
+    return {'last_two':  word[-2:]} # return huruf 2 kata terakhir
 
 labeled_names = (
     [(name, 'male') for name in male_list] + 
@@ -36,11 +34,12 @@ test_set = featuresets[:500]
 
 classifier = nltk.NaiveBayesClassifier.train(train_set)
 
-print ("accuracy is: ")
+print ("ACCURACY IS: ")
 print (nltk.classify.accuracy(classifier, test_set))
 
 classifier.show_most_informative_features()
 
-classifier.classify(gender_features_last_two("TRINITY"))
+test_name = "femilia"
+print(test_name + " is " + classifier.classify(gender_features_last_two(test_name)))
 
 
