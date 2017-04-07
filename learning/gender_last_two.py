@@ -1,7 +1,7 @@
-from nltk.corpus import names
+import nltk
 from read_lineByLine_toList import read_line_by_line
+from find_consonants import count_consonants
 import random
-
 
 male_list = read_line_by_line('datasets/male.csv')
 female_list = read_line_by_line('datasets/female.csv')
@@ -18,7 +18,9 @@ def get_first_word(words):
 
 def gender_features_last_two(word):
     word = get_first_word(word) # ambil kata pertama
-    return {'last_two': word[-1:] + word[-2:]} # return huruf 2 kata terakhir
+    return {'last_two':  word[-2:],
+            'consonants': find_consonants.count_consonants(word)
+    } # return huruf 2 kata terakhir
 
 labeled_names = (
     [(name, 'male') for name in male_list] + 
@@ -39,5 +41,6 @@ print (nltk.classify.accuracy(classifier, test_set))
 
 classifier.show_most_informative_features()
 
+classifier.classify(gender_features_last_two("TRINITY"))
 
 

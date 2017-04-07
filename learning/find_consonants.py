@@ -1,4 +1,3 @@
-
 def count_vowels(word):
     vowels = "aeiou"
     ch = word.lower()
