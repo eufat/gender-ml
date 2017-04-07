@@ -1,10 +1,17 @@
 from pathlib import Path
 # v0.0.1
+# using Python 3.5
 
 __name__ = "Read line by line and store it to List"
 __version__ = '0.1'
 
 def readLineByLine(filepath):
+    '''
+    [Function]
+    Desc: Read Line by line to array from file
+    Version = 0.1
+    (c) Aldey W Putra
+    '''
     koleksi_nama = list()
 
     path = Path(filepath)
