@@ -2,7 +2,7 @@ from pathlib import Path
 # v0.0.1
 # using Python 3.5
 
-__name__ = "Read line by line and store it to List"
+__name__ = '__read_lineByLine__'
 __version__ = '0.1'
 
 def readLineByLine(filepath):
