@@ -1,4 +1,5 @@
 from nltk.corpus import names
+from './../utils/read_lineByLine_toList.py' import *
 import random
 
 # ambil kata pertama dari kalimat
