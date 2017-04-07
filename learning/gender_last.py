@@ -16,14 +16,6 @@ def gender_features_last(word):
     word = get_first_word(word) # ambil kata pertama
     return {'last_letter': word[-1]} # return huruf terakhir
 
-def gender_features_last(word):
-    word = get_first_word(word) # ambil kata pertama
-    return {'first_letter': word[0]} # return huruf pertama
-
-def gender_features_last_two(word):
-    word = get_first_word(word) # ambil kata pertama
-    return {'last_two': word[-1] + word[-2]} # return huruf 2 kata terakhir
-
 labeled_names = (
     [(name, 'male') for name in names.words('male.txt')] + 
     [(name, 'female') for name in names.words('female.txt')]
