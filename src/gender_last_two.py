@@ -39,7 +39,8 @@ print (nltk.classify.accuracy(classifier, test_set))
 
 classifier.show_most_informative_features()
 
-test_name = "femilia"
+test_name = "aldey Wahyu Putra"
+test_name.capitalize()
 print(test_name + " is " + classifier.classify(gender_features_last_two(test_name)))
 
 
