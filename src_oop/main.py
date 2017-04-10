@@ -7,7 +7,8 @@ import random
 class Program:
     
     def main(self, *args):
-        NLTKGenderML().show_maintenance()
-        NLTKGenderML().test_person_gender_by_name('Femilia')
+        genderml = NLTKGenderML()
+        genderml.show_maintenance()
+        genderml.test_person_gender_by_name('Femilia')
 
 Program().main()
