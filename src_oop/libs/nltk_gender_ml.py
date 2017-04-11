@@ -4,9 +4,12 @@ from .sentence_system import *
 import random
 
 class NLTKGenderML:
+    #Documentation
+    """Menentukan jenis kelamin seseorang dari namanya saja dengan ciri khas tertentu, menggunakan teorema Naive Bayes dan NLTK Library"""
     __instance__ = 0
 
     def __init__(self, dataset_male, dataset_female):
+        
         NLTKGenderML.__instance__ += 1
         iosys = IOSystem()
         self.male_list = iosys.read_line_to_list(dataset_male)
@@ -26,8 +29,10 @@ class NLTKGenderML:
         self.classifier = nltk.NaiveBayesClassifier.train(self.train_set)
 
 
+    
     # ambil kata pertama dari kalimat
     def get_first_word(self, words):
+        """Mengambil kata pertama dari suatu kalimat"""
         words_list = words.split()
         if len(words_list) > 1 :
             # kalau lebih besar dari satu kata dalam kalimat, return kata pertama
