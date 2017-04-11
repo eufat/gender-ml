@@ -7,4 +7,6 @@ class Program:
         genderml.show_maintenance()
         genderml.test_person_gender_by_name(name)
 
+        x = str(input(""))
+
 Program().main()
