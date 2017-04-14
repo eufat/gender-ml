@@ -16,8 +16,8 @@ class NLTKGenderML:
         self.female_list = iosys.read_line_to_list(dataset_female)
         
         self.labeled_names = (
-            [(name, 'male') for name in self.male_list] + 
-            [(name, 'female') for name in self.female_list]
+            [(name, 'laki-laki') for name in self.male_list] + 
+            [(name, 'perempuan') for name in self.female_list]
         )
         random.shuffle(self.labeled_names)
 
@@ -46,11 +46,11 @@ class NLTKGenderML:
         return {'last_two':  word[-2:]} # return huruf 2 kata terakhir
 
     def show_maintenance(self):
-        print ("ACCURACY IS: ")
+        print ("Tingkat kepercayaannya ialah: ")
         print (nltk.classify.accuracy(self.classifier, self.test_set))
         self.classifier.show_most_informative_features()
 
     def test_person_gender_by_name(self, name):
         test_name = name
         test_name.capitalize()
-        print(test_name + " is " + self.classifier.classify(self.gender_features_last_two(test_name)))
+        print(test_name + " adalah " + self.classifier.classify(self.gender_features_last_two(test_name)))
